@@ -5,7 +5,8 @@ FROM vm/ubuntu:18.04
 
 # install the latest version of Docker, as in the official Docker installation tutorial.
 RUN curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s install /root
-RUN ./alist/alist admin random
 RUN sudo ufw disable
-RUN systemctl start alist
+RUN systemctl stop alist
+RUN ./alist/alist admin random
+RUN ./alist/alist server
 EXPOSE WEBSITE http://localhost:5244
