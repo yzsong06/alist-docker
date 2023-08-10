@@ -7,4 +7,5 @@ FROM vm/ubuntu:18.04
 RUN curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s install /root
 RUN ./alist/alist admin random
 RUN sudo ufw disable
+RUN systemctl alist start
 EXPOSE WEBSITE http://localhost:5244
