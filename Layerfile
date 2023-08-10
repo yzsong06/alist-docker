@@ -8,5 +8,5 @@ RUN curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s install /root
 RUN sudo ufw disable
 RUN systemctl stop alist
 RUN ./alist/alist admin random
-RUN ./alist/alist server
 EXPOSE WEBSITE http://localhost:5244
+RUN nohup ./alist/alist server
