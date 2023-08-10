@@ -5,6 +5,6 @@ FROM vm/ubuntu:18.04
 
 # install the latest version of Docker, as in the official Docker installation tutorial.
 RUN curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s install
-RUN cd /opt/alist
+RUN cd ./opt/alist
 RUN ./alist admin random
 EXPOSE WEBSITE http://localhost:5244
