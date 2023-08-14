@@ -1,9 +1,7 @@
 FROM vm/ubuntu:18.04
-
-# To note: Layerfiles create entire VMs, *not* containers!
-
-# install the latest version of Docker, as in the official Docker installation tutorial.
 RUN curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s install /root
-RUN sudo ufw disable
 RUN ./alist/alist admin random
 EXPOSE WEBSITE http://localhost:5244
+EXPOSE WEBSITE http://localhost:80
+EXPOSE WEBSITE http://localhost:443
+EXPOSE WEBSITE http://localhost:8080
